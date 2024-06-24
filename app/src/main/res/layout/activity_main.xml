@@ -6,63 +6,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Título ou status do carrinho -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/statusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="oiiiiiiiiii"
+        android:text="Status: Conectado"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_marginTop="16dp"
+        android:gravity="center"/>
 
-
+    <!-- Imagem do carrinho -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="88dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:id="@+id/carImageView"
+        android:layout_width="158dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintDimensionRatio="w,2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusTextView"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonForward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="30dp"
+        android:onClick="onForwardClicked"
+        android:text="Frente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carImageView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="52dp"
+        android:onClick="onLeftClicked"
+        android:text="Esquerda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonForward" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="64dp"
+        android:onClick="onRightClicked"
+        android:text="Direita"
+        app:layout_constraintStart_toEndOf="@id/buttonLeft"
+        app:layout_constraintTop_toBottomOf="@id/buttonForward" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonHorn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="268dp" />
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="150dp"
+        android:onClick="onBackwardClicked"
+        android:text="BUZINA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintTop_toBottomOf="@id/buttonForward"
+        />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="414dp" />
-
-
+        android:layout_marginTop="48dp"
+        android:onClick="onBackwardClicked"
+        android:text="RE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonHorn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
